@@ -1,0 +1,189 @@
+<div class="container">
+
+  <h1>
+    Cont&aacute;ctanos
+    <span></span>
+  </h1>
+  
+  <p>Te recomendamos que visites nuestro <a href="https://blog.cabify.com/" target=" _blank">blog</a> y te unas a neustro grupo de <a href="https://www.facebook.com/Cabify/?brand_redir=150469895046350" target=" _blank">facebook</a> y <a href="https://twitter.com/cabify" target=" _blank">twitter</a>.</p>
+
+  <form
+    ng-submit="cysubmitcontact(cycontact)"
+    ng-show="!cysubmitted"
+    name="cycontact"
+    ng-disabled="cysubmit"
+    ng-class="{'disabled': cysubmit }"
+    class="fadein fadeout"
+    novalidate>
+
+    <p class="cy-upper cy-form-title">
+      Llene este formulario
+      <span class="cy-req cy-right">
+        <span></span>
+        campos requeridos
+      </span>
+    </p>
+
+     <div class="cy-form-input cy-form-input-req cy-br-tl cy-br-tr">
+        <label for="cy-input-email">
+          <span class="cy-sr">Email:</span>
+          <input type="email"
+            class="cy-input cy-br-tl cy-br-tr"
+            placeholder="Email"
+            id="cy-input-email"
+            ng-model="cyform.email"
+            name="email"
+            ng-class="{'cy-valid': cycontact.email.$valid, 'cy-error': (cycontact.$submitted || cycontact.email.$touched) && (cycontact.email.$error.required || cycontact.email.$error.email) }"
+            required />
+            <span
+              ng-show="(cycontact.$submitted || cycontact.email.$touched) && (cycontact.email.$error.required || cycontact.email.$error.email)"
+              class="cy-error-msg fadein fadeout">
+                Por favor ingresa un email valido
+                <span></span>
+            </span>
+        </label>
+      </div>
+
+      <div class="cy-form-input cy-form-input-req">
+        <label for="cy-input-nombre">
+          <span class="cy-sr">Nombre:</span>
+          <input type="text"
+          class="cy-input"
+          placeholder="Nombre"
+          id="cy-input-nombre"
+          ng-model="cyform.nombre"
+          ng-class="{'cy-valid': cycontact.nombre.$valid, 'cy-error': (cycontact.$submitted || cycontact.nombre.$touched) && (cycontact.nombre.$error.required || cycontact.nombre.$error.minlength) }"
+          required
+          name="nombre"
+          ng-minlength="2" />
+          <span 
+            ng-show="(cycontact.$submitted || cycontact.nombre.$touched) && (cycontact.nombre.$error.required || cycontact.nombre.$error.minlength)"
+            ng-class="{'cy-fade-in' : cycontact.nombre.$error.required || cycontact.nombre.$error.minlength}"
+            class="cy-error-msg fadein fadeout">
+              Por favor ingresa un nombre valido
+              <span></span>
+          </span>
+        </label>
+      </div>
+
+      <div class="cy-form-input cy-form-input-req">
+        <label for="cy-input-asunto">
+          <span class="cy-sr">Asunto:</span>
+          <input type="text"
+          class="cy-input"
+          placeholder="Asunto"
+          id="cy-input-asunto"
+          ng-model="cyform.asunto"
+          name="asunto"
+          ng-class="{'cy-valid': cycontact.asunto.$valid, 'cy-error': (cycontact.$submitted || cycontact.asunto.$touched) && (cycontact.asunto.$error.required || cycontact.asunto.$error.minlength) }"
+          ng-minlength="3"
+          required />
+          <span
+            ng-show="(cycontact.$submitted || cycontact.asunto.$touched) && (cycontact.asunto.$error.required || cycontact.asunto.$error.minlength)"
+            ng-class="{'cy-fade-in' : cycontact.asunto.$error.required || cycontact.asunto.$error.minlength}"
+            class="cy-error-msg fadein fadeout">
+              Por favor ingresa un asunto valido
+              <span></span>
+          </span>
+        </label>
+      </div>
+
+      <div class="cy-form-input cy-form-textarea cy-form-input-req cy-br-bl cy-br-br">
+        <label for="cy-textarea-desc">
+          <span class="cy-sr">Descripci&oacute;n:</span>
+          <textarea
+            class="cy-input cy-textarea"
+            placeholder="Descripci&oacute;n"
+            maxlength="300"
+            id="cy-textarea-desc"
+            ng-model="cyform.descripcion"
+            ng-minlength="3"
+            ng-class="{'cy-valid': cycontact.descripcion.$valid, 'cy-error': (cycontact.$submitted || cycontact.descripcion.$touched) && (cycontact.descripcion.$error.required || cycontact.descripcion.$error.minlength) }"
+            name="descripcion"
+            required>
+          </textarea>
+          <span class="cy-textarea-right">M&aacute;ximo 300 caracteres</span>
+          <span
+            ng-show="(cycontact.$submitted || cycontact.descripcion.$touched) && (cycontact.descripcion.$error.required || cycontact.descripcion.$error.minlength)"
+            ng-class="{'cy-fade-in' : cycontact.descripcion.$error.required || cycontact.descripcion.$error.minlength}"
+            class="cy-error-msg fadein fadeout cy-br-bl cy-br-br">
+              Por favor ingresa un descripci&oacute;n valido
+              <span></span>
+          </span>
+        </label>
+      </div>
+
+    <div class="cy-form-input cy-form-rating cy-br cy-mt20 cy-mb20">
+      <label class="cy-label-rating">¿C&oacute;mo fue tu experiencia con Cabify?
+        {{test}}
+        <cy-stars max="5" rating="rating" ng-model="test"></cy-stars>
+      </label>
+    </div>
+
+    <div class="cy-form-input cy-form-select cy-br-tl cy-br-tr">
+      <label for="cy-select-pais">
+        <span class="cy-sr">El pais</span>
+        <span class="cy-select-bg cy-select-pais"></span>
+        <select class="cy-select cy-br-tl cy-br-tr"
+        id="cy-select-pais"
+        ng-model="cyform.pais">
+          <option value="" selected>El pais</option>
+          <option value="Espa&ntilde;a">Espa&ntilde;a</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="cy-form-input cy-form-select cy-form-input-req">
+      <label for="cy-select-dept">
+        <span class="cy-sr">Departamento</span>
+        <span
+          class="cy-select-bg cy-select-dept"
+          ng-class="{'cy-valid': cycontact.departamento.$valid, 'cy-error' : (cycontact.$submitted || cycontact.departamento.$touched) && (cycontact.departamento.$error.required || cycontact.departamento.$error.minlength) }"
+        ></span>
+        <select class="cy-select"
+        id="cy-select-dept"
+        ng-model="cyform.departamento"
+        name="departamento"
+        required>
+          <option value="" selected>Departamento</option>
+          <option value="Departamento 1">Departamento 1</option>
+          <option value="Departamento 2">Departamento 2</option>
+        </select>
+        <span 
+          ng-show="(cycontact.$submitted || cycontact.departamento.$touched) && (cycontact.departamento.$error.required || cycontact.departamento.$error.minlength)"
+          ng-class="{'cy-fade-in' : cycontact.departamento.$error.required || cycontact.departamento.$error.minlength}"
+          class="cy-error-msg fadein fadeout">
+            Por favor ingresa un departamento valido
+            <span></span>
+        </span>
+      </label>
+    </div>
+
+    <div class="cy-form-input cy-form-input">
+      <label class="cy-label-attach" nv-file-drop="" nv-file-over="" uploader="uploader" options="{url: '/demo'}">
+        <u>Agregue un archivo</u> o coloque archivos aqu&iacute;
+      </label>
+      <input type="file" class="cy-file-upload" nv-file-select="" uploader="uploader" multiple />
+      <ul class="cy-attach-queue" ng-if="uploader.queue.length">
+        <li ng-repeat="item in uploader.queue">
+          <span class="cy-attach-name">Name: <strong>{{ item.file.name }}</strong></span>
+          <span>Size: {{ item.file.size/1024|number:2 }} Kb</span>
+          <span ng-click="item.remove()" class="cy-attach-remove cy-right">&times;</span>
+        </li>
+      </ul>
+    </div>
+
+    <button
+      type="submit"
+      class="cy-btn cy-br-bl cy-br-br"
+      ng-disabled="!cycontact.$valid || cysubmit === true"
+      ng-class="{'cy-disabled': !cycontact.$valid || cysubmit === true }">
+        Env&iacute;a tu pregunta
+        <span class="cy-loader" ng-if="cysubmit === true"></span>
+      </button>
+
+  </form>
+
+  <p ng-show="cyshowthanks" class="fadein fadeout cy-mt40 cy-bold">Thank you, we have received your request.</p>
+
+</div>

@@ -1,0 +1,465 @@
+/* Do not remove the comments below. It's the markers used by wiredep to inject
+   less dependencies when defined in the bower.json of your dependencies */
+// bower:less
+// endbower
+
+@cyltgray: #EAEAEA;
+@cydarkgray: #333;
+@cymedgray: #717171;
+@cylink: #47BEC0;
+@cygreen: #51D3D4;
+@cybtngreen: #4BD1D4;
+@cybtngreenhover: #4FDFE2;
+@cyreq: #FFAB3B;
+@cystar: #FFAC33;
+@cywhite: #FFF;
+@cyinputgray: #ADADAD;
+@cyformtitle: #BABABA;
+@cyvalid: #4ED2D4;
+@cyerror:#ff524b;
+
+@font-face {
+  font-family: "avinir";
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "avinir_demi";
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global */
+body {
+  font-family: 'avinir', sans-serif;
+  color:#717171;
+  margin: 0;
+  padding:0;
+}
+h1 {
+  font-family: "avinir_demi", sans-serif;
+  font-size:32px;
+  line-height:40px;
+  margin:0 0 22px 0;
+  padding:0 0 28px 0;
+  color:@cydarkgray;
+  position:relative;
+  > span {
+    width:50px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    border:4px solid @cygreen;
+  }
+}
+p {
+  font-size:16px;
+  line-height:20px;
+  color:@cymedgray;
+  margin:0 0 12px 0;
+  padding:0;
+}
+a {
+  color:@cylink;
+  text-decoration:none;
+  &:hover {
+    text-decoration:underline;
+  }
+}
+.container {
+  margin:0 auto;
+  padding:50px 20px;
+  min-height:500px;
+}
+/* */
+
+/* Form Styles */
+.cy-form-title {
+  font-size:12px;
+  color:@cyformtitle;
+  margin:30px 0 10px 0;
+}
+.cy-req {
+  font-size:14px;
+  text-transform:none;
+  > span {
+    background-color: @cyreq;
+    width:4px;
+    height:4px;
+    border-radius:2px;
+    display:inline-block;
+    position:relative;
+    top:-1px;
+  }
+}
+label {
+  color:@cyinputgray;
+  font-size:16px;
+  line-height:18px;
+}
+.cy-input {
+  font-family:'avinir', sans-serif;
+  display: block;
+  width: 86%;
+  height: 33px;
+  padding: 11px 2% 13px 12%;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  border:0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline:none;
+  color:@cydarkgray;
+  background-position:13px 14px;
+  background-repeat: no-repeat;
+}
+.cy-input.cy-valid,
+.cy-select.cy-valid {
+  padding-bottom:9px;
+  border-bottom:4px solid @cyvalid;
+}
+.cy-error-msg {
+  position:relative;
+  background:@cyerror;
+  font-size:14px;
+  line-height:16px;
+  color:#fff;
+  display:block;
+  padding:7px 20px;
+  > span {
+    position:absolute;
+    top:-5px;
+    left:17px;
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid @cyerror;
+  }
+}
+.cy-select {
+  .cy-input;
+  width:100%;
+  height:56px;
+  color:@cyinputgray;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('/assets/images/form/form_arrow.svg');
+  background-repeat:no-repeat;
+  background-position: 96% center;
+  padding: 13px 2% 11px 12%;
+}
+#cy-input-email {
+  background-image:url('/assets/images/form/form_email.svg');
+}
+#cy-input-email.cy-error {
+  background-image:url('/assets/images/form/form_email_error.svg');
+}
+#cy-input-email.cy-valid {
+  background-image:url('/assets/images/form/form_email_valid.svg');
+}
+#cy-input-nombre {
+  background-image:url('/assets/images/form/form_nombre.svg');
+}
+#cy-input-nombre.cy-error {
+  background-image:url('/assets/images/form/form_nombre_error.svg');
+}
+#cy-input-nombre.cy-valid {
+  background-image:url('/assets/images/form/form_nombre_valid.svg');
+}
+#cy-input-asunto {
+  background-image:url('/assets/images/form/form_asunto.svg');
+}
+#cy-input-asunto.cy-error {
+  background-image:url('/assets/images/form/form_asunto_error.svg');
+}
+#cy-input-asunto.cy-valid {
+  background-image:url('/assets/images/form/form_asunto_valid.svg');
+}
+#cy-textarea-desc {
+  background-image:url('/assets/images/form/form_desc.svg');
+  background-size:22px;
+  background-position:9px 14px;
+}
+#cy-textarea-desc.cy-valid {
+  background-image:url('/assets/images/form/form_desc_valid.svg');
+}
+#cy-textarea-desc.cy-error {
+  background-image:url('/assets/images/form/form_desc_error.svg');
+}
+.cy-select-bg {
+  position:absolute;
+  top:23px;
+  left:19px;
+  width:20px;
+  height:20px;
+  background-repeat: no-repeat;
+}
+.cy-select-pais {
+  background-image:url('/assets/images/form/form_pais.png');
+  background-size:12px;
+}
+.cy-select-dept {
+  background-image:url('/assets/images/form/form_dept.svg');
+  top:18px;
+  left:15px;
+}
+.cy-select-dept.cy-error {
+  background-image:url('/assets/images/form/form_dept_error.svg');
+}
+.cy-select-dept.cy-valid {
+  background-image:url('/assets/images/form/form_dept_valid.svg');
+}
+.cy-label-attach {
+  background:url('/assets/images/form/form_attach.svg') 13px 20px no-repeat;
+  padding:20px 20px 20px 35px;
+  display:block;
+}
+.cy-sr {
+  position:absolute;
+  text-indent:-9999px;
+}
+.cy-form-input {
+  border:1px solid @cyltgray;
+  border-width:1px 1px 0 1px;
+  display:block;
+  position:relative;
+}
+.cy-form-textarea {
+  border-width:1px;
+  border-radius:0;
+}
+.cy-textarea {
+  position:relative;
+  height:110px;
+  border:0;
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+  padding-top:14px;
+}
+.cy-textarea-right {
+  position:absolute;
+  bottom:8px;
+  right:13px;
+}
+/* */
+
+
+/* Misc */
+.cy-upper {
+  text-transform:uppercase;
+}
+.cy-br {
+  border-radius:5px;
+}
+.cy-bt-ltgray {
+  border-top:1px solid @cyltgray;
+}
+.cy-bb-ltgray {
+  border-top:1px solid @cyltgray;
+}
+.cy-br-tl {
+  border-top-left-radius: 5px;
+}
+.cy-br-tr {
+  border-top-right-radius: 5px;
+}
+.cy-br-bl {
+  border-bottom-left-radius: 5px;
+}
+.cy-br-br {
+  border-bottom-right-radius: 5px;
+}
+.cy-bt-0 {
+  border-top:0;
+}
+.cy-bb-0 {
+  border-bottom:0;
+}
+.cy-btn {
+  position:relative;
+  display:block;
+  text-align:center;
+  font-size:14px;
+  background-color:@cybtngreen;
+  width:100%;
+  padding:20px 0;
+  border:0;
+  transition: background .25s ease-in-out;
+  cursor:pointer;
+  color:@cywhite;
+  &:hover {
+    background:@cybtngreenhover;
+  }
+}
+.cy-btn
+.cy-loader {
+  position:absolute;
+  top:50%;
+  margin-top:-18px;
+  right:30px;
+}
+.cy-p20 {
+  padding:20px;
+}
+.cy-mr6 {
+  margin-right:6px;
+}
+.cy-mt20 {
+  margin-top:20px;
+}
+.cy-mt40 {
+  margin-top:40px;
+}
+.cy-mb20 {
+  margin-bottom:20px;
+}
+.cy-right {
+  float:right;
+}
+.cy-bold {
+  font-family:'avinir_demi', sans-serif;
+}
+.fadein,
+.fadeout {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .25s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .25s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .25s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .25s;
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+  display: block !important;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+  display: block !important;
+}
+.cy-disabled {
+  opacity:.5;
+}
+.cy-loader {
+  background-image:url('/assets/images/btn-loader.svg');
+  background-repeat: no-repeat;
+  background-position:center right;
+  background-size:35px;
+  display:block;
+  width:35px;
+  height:35px;
+}
+/* */
+
+/* Fade in view */
+.cy-fade-in.ng-enter {
+  -webkit-animation: Fade-Enter-Anime .5s;
+  -moz-animation: Fade-Enter-Anime .5s;
+  animation: Fade-Enter-Anime .5s;
+}
+@keyframes Fade-Enter-Anime {
+     from { opacity: 0; }
+     to { opacity: 1; }
+   }
+@keyframes Fade-Leave-Anime {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-webkit-keyframes Fade-Enter-Anime {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@-webkit-keyframes Fade-Leave-Anime {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-moz-keyframes Fade-Enter-Anime {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@-moz-keyframes Fade-Leave-Anime {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+/* */
+
+/* File Upload */
+.cy-file-upload {
+  width:200px;
+  height:30px;
+  position:absolute;
+  top:20px;
+  left:20px;
+  opacity:0;
+  cursor:pointer;
+}
+.cy-attach-queue {
+  margin:0;
+  list-style:none;
+  padding:5px;
+  display:block;
+}
+.cy-attach-queue li {
+  font-size:12px;
+  display:block;
+  padding:8px 8px 6px 8px;
+}
+.cy-attach-queue li span {
+  display:inline-block;
+}
+.cy-attach-queue > li:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+.cy-attach-name {
+  width:60%;
+}
+.cy-attach-name strong {
+  font-family:'avinir_demi', sans-serif;
+}
+.cy-attach-remove {
+  font-size:20px;
+  line-height:22px;
+  margin-top:-2px;
+  cursor:pointer;
+}
+canvas {
+  background-color: #f3f3f3;
+  -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+  -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+  box-shadow: 3px 3px 3px 0 #e3e3e3;
+  border: 1px solid #c3c3c3;
+  height: 100px;
+  margin: 6px 0 0 6px;
+}
+/* */
+
+/* Desktop styles */
+@media only screen and (min-width : 768px) {
+  .container {
+    width:458px;
+  }
+  .cy-input {
+    width: 89%;
+    padding: 11px 2% 13px 9%;
+  }
+  .cy-select {
+    padding: 13px 2% 11px 9%;
+  }
+  .cy-rating {
+    zoom:1;
+  }
+}
+
+/* Do not remove the comments below. It's the markers used by gulp-inject to inject
+   all your less files automatically */
+// injector
+// endinjector

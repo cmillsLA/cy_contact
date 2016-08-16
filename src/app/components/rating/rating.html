@@ -1,0 +1,20 @@
+<ul class="cy-rating">
+  <span class="cy-star-group" ng-repeat="star in stars">
+    <li class="cy-star cy-star-half"
+      ng-class="{'cy-star-active': rating >= ($index + 1 / 2) }"
+      ng-click="cyrate($index + 1 / 2)"
+      tooltips tooltip-template="{{$index + 1 / 2}}"
+      ng-mouseover="cyratehover($index + 1 / 2)"
+      ng-mouseout="cyratehover()">
+        <span></span>
+    </li>
+    <li class="cy-star cy-star-full cy-star-right"
+      ng-class="{'cy-star-active': rating >= $index + 1 }"
+      ng-click="cyrate($index + 1)"
+      tooltips tooltip-template="{{$index + 1}}"
+      ng-mouseover="cyratehover($index + 1)"
+      ng-mouseout="cyratehover()">
+        <span></span>
+    </li>
+  </span>
+</ul>

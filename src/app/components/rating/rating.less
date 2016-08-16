@@ -1,0 +1,78 @@
+/* Rating */
+.cy-form-rating {
+  background:url('/assets/images/form/form_star.svg') 18px 20px no-repeat;
+  padding:20px 45px 15px 45px;
+  border-width:1px;
+}
+.cy-rating {
+  list-style:none;
+  margin:15px 0 0 0;
+  padding:0;
+  display:block;
+  text-align:center;
+  height:44px;
+  zoom:.80;
+}
+.cy-rating
+.cy-star {
+  background-image:url('/assets/images/form/form_rating_star.svg');
+  background-repeat:no-repeat;
+  background-size:44px;
+  transition: background-image .25s ease-in-out;
+  display:block;
+  cursor:pointer;
+  margin:0;
+  color:@cyltgray;
+  font-size:47px;
+  width:22px;
+  height:44px;
+  position:absolute;
+  top:0;
+}
+.cy-rating
+.cy-star-active {
+  background-image:url('/assets/images/form/form_rating_star_active.svg');
+  background-repeat:no-repeat;
+}
+.cy-star-right {
+  background-position:top right;
+}
+.cy-rating span {
+  display:inline-block;
+}
+.cy-star-group {
+  position:relative;
+  display:inline-block;
+  width:44px;
+  height:44px;
+  margin:0 6px;
+}
+.cy-star-half {
+  position:absolute;
+  left:0;
+  top:0;
+}
+.cy-star-full {
+  position:absolute;
+  left:22px;
+  top:0;
+}
+
+/* Tooltip Overrides */
+tooltip {
+  position:static
+}
+tooltip tip {
+  background:@cybtngreen !important;
+  min-width:0;
+}
+tooltip._top tip {
+  left:22px;
+  -webkit-box-shadow: 3px 3px 5px -2px rgba(204,204,204,1);
+  -moz-box-shadow: 3px 3px 5px -2px rgba(204,204,204,1);
+  box-shadow: 3px 3px 5px -2px rgba(204,204,204,1);
+}
+tooltip._top tip tip-arrow {
+  border-top:6px solid @cybtngreen;
+}
+/* */
